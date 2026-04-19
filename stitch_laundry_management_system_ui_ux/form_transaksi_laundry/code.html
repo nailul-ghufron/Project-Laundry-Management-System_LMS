@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Point of Sale - New Order</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#444653",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#3755c3",
+                      "surface-dim": "#dad9e3",
+                      "surface-bright": "#fbf8ff",
+                      "primary-fixed": "#dde1ff",
+                      "inverse-surface": "#2f3037",
+                      "surface-container-low": "#f4f2fc",
+                      "outline": "#757684",
+                      "on-secondary-fixed": "#002113",
+                      "on-background": "#1a1b22",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-tertiary-container": "#ffa929",
+                      "on-primary-fixed": "#001453",
+                      "on-secondary-container": "#00714d",
+                      "tertiary-container": "#6b4200",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-surface": "#1a1b22",
+                      "on-secondary-fixed-variant": "#005236",
+                      "secondary-fixed": "#6ffbbe",
+                      "inverse-on-surface": "#f1f0fa",
+                      "tertiary": "#4c2e00",
+                      "primary-container": "#1e40af",
+                      "surface": "#fbf8ff",
+                      "secondary-container": "#6cf8bb",
+                      "primary": "#00288e",
+                      "inverse-primary": "#b8c4ff",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c4c5d5",
+                      "on-primary-container": "#a8b8ff",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#e3e1eb",
+                      "background": "#fbf8ff",
+                      "secondary": "#006c49",
+                      "on-primary-fixed-variant": "#173bab",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-container-highest": "#e3e1eb",
+                      "surface-container-high": "#e8e7f1",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container": "#eeedf7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+      </style>
+</head>
+<body class="bg-surface-container-low text-on-surface flex min-h-screen">
+<!-- Shared Component: SideNavBar -->
+<nav class="bg-slate-100 dark:bg-slate-900 text-blue-800 dark:text-blue-400 font-['Inter'] tracking-tight headline-md:font-semibold body-md:font-normal h-screen w-64 fixed left-0 top-0 border-none flex flex-col h-full py-8 space-y-4 shadow-[4px_0_24px_rgba(26,27,34,0.02)] z-50">
+<div class="px-8 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_laundry_service</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tighter text-blue-900 dark:text-blue-100">Pristine LMS</h1>
+<p class="text-xs text-slate-500">The Pristine Flow</p>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 w-full">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:text-blue-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- New Order (Active) -->
+<a class="flex items-center gap-4 bg-blue-700 text-white rounded-full mx-4 px-6 py-3 font-semibold transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+<span>New Order</span>
+</a>
+<!-- Laundry Status (Inactive) -->
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:text-blue-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">local_laundry_service</span>
+<span>Laundry Status</span>
+</a>
+<!-- Revenue Reports (Inactive) -->
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 px-8 py-3 hover:text-blue-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Revenue Reports</span>
+</a>
+</div>
+<div class="px-8 mt-auto">
+<a class="flex items-center gap-4 text-slate-500 dark:text-slate-400 py-3 hover:text-blue-700 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-lg px-4 -mx-4" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 flex flex-col min-h-screen relative">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-white/70 backdrop-blur-md dark:bg-slate-950/70 text-blue-800 dark:text-blue-400 font-['Inter'] title-sm:font-semibold on_surface_variant:text-slate-500 fixed top-0 right-0 w-[calc(100%-16rem)] z-40 shadow-[0_12px_40px_rgba(26,27,34,0.06)] flex items-center justify-between px-8 h-20 transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-slate-100/50 border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:bg-white focus:ring-2 focus:ring-blue-500/50 transition-all outline-none" placeholder="Search orders..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-slate-50 mr-6">Management Suite</span>
+<button class="p-2 text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="ml-4 w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close up portrait of professional young man smiling softly in well lit modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyYIhlEYrMA9ZZ4Q_1GALzJ8ncfrKB5vvNo6bsl0Zy7EZyA4fwqq7AonuWutWzLWF8wxFlfnohh38NPTO7w30KjupJgIXK3auYJyeS0228fc-0QcEvoYBriG8CKTJfx0AHoV2H3Bxgsf-Y_RClRbm-Z0B2_3-WxnZtDUZ3vd_kk6QFvXiEWRHI9VggmDCATHBbw4eqeh1QpS0UfqoHx-XJUjQWYCUcZIe9qsc4PkqQPb4y_DFwqpw6AUKyabzpKRMhHI9mbBOJWr-7"/>
+</div>
+</div>
+</header>
+<!-- Page Content: POS Grid -->
+<div class="pt-28 px-8 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Details (span 8) -->
+<div class="lg:col-span-8 space-y-8">
+<div class="mb-2">
+<h2 class="text-headline-md font-headline font-semibold text-on-background tracking-tight">Form Transaksi Baru</h2>
+<p class="text-on-surface-variant text-body-md mt-1">Isi detail pelanggan dan item cucian untuk membuat pesanan.</p>
+</div>
+<!-- Section 1: Customer Details -->
+<section class="bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_4px_20px_rgba(26,27,34,0.03)] transition-all">
+<h3 class="text-title-sm font-headline font-semibold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">person</span>
+                        Customer Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-wider">Nama Lengkap</label>
+<input class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full placeholder:text-outline outline-none" placeholder="Cari atau input nama..." type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-wider">Nomor Telepon</label>
+<input class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full placeholder:text-outline outline-none" placeholder="08..." type="tel"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-wider">Alamat</label>
+<textarea class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full placeholder:text-outline outline-none resize-none" placeholder="Alamat lengkap pengiriman/penjemputan..." rows="2"></textarea>
+</div>
+</div>
+</section>
+<!-- Section 2: Dynamic Item List -->
+<section class="bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_4px_20px_rgba(26,27,34,0.03)] transition-all">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-title-sm font-headline font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+                            Detail Cucian
+                        </h3>
+<button class="bg-primary-container/10 text-primary hover:bg-primary-container hover:text-on-primary-container px-4 py-2 rounded-full font-label text-label-sm font-bold flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                            Tambah Item Cucian
+                        </button>
+</div>
+<!-- List Header -->
+<div class="grid grid-cols-12 gap-4 pb-3 border-b border-surface-dim/30 mb-4 text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-5">Jenis Layanan</div>
+<div class="col-span-3 text-right">Berat / Qty</div>
+<div class="col-span-3 text-right">Subtotal</div>
+<div class="col-span-1 text-center">Aksi</div>
+</div>
+<!-- Item Row 1 -->
+<div class="grid grid-cols-12 gap-4 items-center group p-2 hover:bg-surface-container rounded-xl transition-colors -mx-2">
+<div class="col-span-5">
+<select class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full outline-none appearance-none cursor-pointer">
+<option>Cuci Kering Reguler (Rp 7.000/kg)</option>
+<option>Cuci Setrika Express (Rp 12.000/kg)</option>
+<option>Bed Cover Besar (Rp 25.000/pcs)</option>
+</select>
+</div>
+<div class="col-span-3 relative">
+<input class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full text-right outline-none pr-8" type="number" value="3.5"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline text-body-md">kg</span>
+</div>
+<div class="col-span-3 text-right font-headline font-semibold text-on-surface">
+                            Rp 24.500
+                        </div>
+<div class="col-span-1 flex justify-center">
+<button class="text-outline hover:text-error transition-colors p-2 rounded-full hover:bg-error-container/50">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item Row 2 -->
+<div class="grid grid-cols-12 gap-4 items-center group p-2 hover:bg-surface-container rounded-xl transition-colors -mx-2 mt-2">
+<div class="col-span-5">
+<select class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full outline-none appearance-none cursor-pointer">
+<option selected="">Bed Cover Besar (Rp 25.000/pcs)</option>
+<option>Cuci Kering Reguler (Rp 7.000/kg)</option>
+<option>Cuci Setrika Express (Rp 12.000/kg)</option>
+</select>
+</div>
+<div class="col-span-3 relative">
+<input class="bg-surface-container-highest border-none rounded-xl px-4 py-3 text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-colors w-full text-right outline-none pr-10" type="number" value="1"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline text-body-md">pcs</span>
+</div>
+<div class="col-span-3 text-right font-headline font-semibold text-on-surface">
+                            Rp 25.000
+                        </div>
+<div class="col-span-1 flex justify-center">
+<button class="text-outline hover:text-error transition-colors p-2 rounded-full hover:bg-error-container/50">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary (span 4) -->
+<div class="lg:col-span-4">
+<div class="bg-surface-bright rounded-[32px] p-8 shadow-[0_12px_40px_rgba(26,27,34,0.06)] sticky top-28 border border-white/40">
+<h3 class="text-title-sm font-headline font-semibold text-on-surface mb-6">Ringkasan Pesanan</h3>
+<div class="space-y-4 mb-8 text-body-md">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal Item</span>
+<span class="text-on-surface font-medium">Rp 49.500</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Biaya Antar/Jemput</span>
+<span class="text-on-surface font-medium text-secondary">Gratis</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Pajak (11%)</span>
+<span class="text-on-surface font-medium">Rp 5.445</span>
+</div>
+</div>
+<!-- Section 3: Large text for Total -->
+<div class="bg-surface-container-low rounded-2xl p-6 mb-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<span class="text-label-sm font-label font-bold text-primary uppercase tracking-wider block mb-2 relative z-10">Total Harga</span>
+<div class="text-[2.5rem] leading-none font-bold text-on-surface tracking-tighter relative z-10">
+                            Rp 54.945
+                        </div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-[linear-gradient(135deg,var(--tw-colors-primary)_0%,var(--tw-colors-primary-container)_100%)] text-on-primary rounded-full py-4 px-6 font-headline text-title-sm font-semibold flex items-center justify-center gap-3 hover:shadow-lg hover:scale-[1.02] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                        Simpan Transaksi &amp; Cetak Nota
+                    </button>
+<div class="mt-6 flex justify-center">
+<button class="text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors flex items-center gap-2">
+                             Simpan sebagai Draft
+                         </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

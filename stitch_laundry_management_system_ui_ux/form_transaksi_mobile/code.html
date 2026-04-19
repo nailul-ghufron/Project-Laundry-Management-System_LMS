@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PristineFlow - Transaksi Baru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#1a1b22",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-highest": "#e3e1eb",
+                        "primary-container": "#1e40af",
+                        "surface-bright": "#fbf8ff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "primary": "#00288e",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary": "#4c2e00",
+                        "outline": "#757684",
+                        "inverse-on-surface": "#f1f0fa",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6b4200",
+                        "surface-container-low": "#f4f2fc",
+                        "on-surface-variant": "#444653",
+                        "inverse-surface": "#2f3037",
+                        "surface-variant": "#e3e1eb",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1b22",
+                        "surface-dim": "#dad9e3",
+                        "on-error-container": "#93000a",
+                        "background": "#fbf8ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "outline-variant": "#c4c5d5",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed": "#001453",
+                        "on-primary-container": "#a8b8ff",
+                        "secondary": "#006c49",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-container": "#eeedf7",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dde1ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#3755c3",
+                        "surface": "#fbf8ff",
+                        "on-tertiary-container": "#ffa929",
+                        "inverse-primary": "#b8c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full flex justify-between items-center px-6 h-16 bg-[#fbf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none font-['Inter'] font-semibold tracking-tight">
+<button class="text-[#1e40af] dark:text-blue-400 hover:bg-[#f4f2fc] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<div class="text-xl font-bold tracking-tighter text-[#1e40af] dark:text-blue-400">PristineFlow</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface-container-lowest">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional manager with a clean, approachable look, wearing a neat shirt against a light, neutral background, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbuLMM1R7Z_zQAEjpWu3nPGPPCm3nz0zzLKcXO5cxHpdW8qrQ52zM6-xpJ7pVp9J-6YhYIKy1_uYl3UbPp0VR-CfieflaU1-JZWlWvTJBMZKwT2Hg-gS5vEq_RCLADMXkhRCyO_1UwTCIOSSli2RYX5UXWW8srprkQtSPX82FP_ZQne8k5Ecxg-gTKMYTTU119U5vboM-NuMOvElqLi-vvYtlZuhbE65zN-iZTQgosjInIO_nAbYpyyRSlQ1AfPNWp8AXmEcencW8"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full bg-[#f4f2fc] dark:bg-slate-900 h-[1px]"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-4 md:px-6 max-w-lg mx-auto">
+<div class="mb-6">
+<h1 class="font-headline text-headline-md text-on-surface tracking-tight mb-1">Transaksi Baru</h1>
+<p class="text-body-md text-on-surface-variant">Input detail pesanan pelanggan.</p>
+</div>
+<form class="space-y-6">
+<!-- Customer Details Section -->
+<section class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<h2 class="font-headline text-title-sm text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">person</span> Data Pelanggan
+                </h2>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5" for="customer_name">Nama Pelanggan</label>
+<input class="w-full bg-surface-container-highest border-none rounded-md text-body-md text-on-surface px-4 py-3 focus:ring-0 focus:bg-surface-container-lowest focus:outline focus:outline-[0.5px] focus:outline-primary/40 transition-colors" id="customer_name" placeholder="Masukkan nama..." type="text"/>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5" for="customer_phone">Nomor Telepon</label>
+<input class="w-full bg-surface-container-highest border-none rounded-md text-body-md text-on-surface px-4 py-3 focus:ring-0 focus:bg-surface-container-lowest focus:outline focus:outline-[0.5px] focus:outline-primary/40 transition-colors" id="customer_phone" placeholder="08..." type="tel"/>
+</div>
+</section>
+<!-- Service Details Section -->
+<section class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<h2 class="font-headline text-title-sm text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">local_laundry_service</span> Detail Layanan
+                </h2>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Jenis Layanan</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="service_type" type="radio" value="kiloan"/>
+<div class="bg-surface-container-highest text-on-surface rounded-md py-3 px-4 text-center text-body-md font-medium peer-checked:bg-primary-container peer-checked:text-on-primary transition-colors">Kiloan</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="service_type" type="radio" value="satuan"/>
+<div class="bg-surface-container-highest text-on-surface rounded-md py-3 px-4 text-center text-body-md font-medium peer-checked:bg-primary-container peer-checked:text-on-primary transition-colors">Satuan</div>
+</label>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-1">
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5" for="weight">Berat (Kg)</label>
+<input class="w-full bg-surface-container-highest border-none rounded-md text-body-md text-on-surface px-4 py-3 focus:ring-0 focus:bg-surface-container-lowest focus:outline focus:outline-[0.5px] focus:outline-primary/40 transition-colors" id="weight" placeholder="0.0" step="0.1" type="number"/>
+</div>
+<div class="flex-1">
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5" for="items">Jumlah (Pcs)</label>
+<input class="w-full bg-surface-container-highest border-none rounded-md text-body-md text-on-surface px-4 py-3 focus:ring-0 focus:bg-surface-container-lowest focus:outline focus:outline-[0.5px] focus:outline-primary/40 transition-colors" id="items" placeholder="0" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Paket</label>
+<div class="flex flex-col gap-2">
+<label class="flex items-center p-3 bg-surface-container-lowest rounded-md cursor-pointer border border-transparent outline-variant/15 hover:bg-surface-container transition-colors">
+<input checked="" class="text-primary-container focus:ring-primary-container border-outline w-4 h-4" name="package" type="radio"/>
+<span class="ml-3 text-body-md text-on-surface flex-1">Reguler (3 Hari)</span>
+<span class="text-body-md text-on-surface-variant">Rp 7.000/kg</span>
+</label>
+<label class="flex items-center p-3 bg-surface-container-lowest rounded-md cursor-pointer border border-transparent outline-variant/15 hover:bg-surface-container transition-colors">
+<input class="text-primary-container focus:ring-primary-container border-outline w-4 h-4" name="package" type="radio"/>
+<span class="ml-3 text-body-md text-on-surface flex-1">Kilat (1 Hari)</span>
+<span class="text-body-md text-on-surface-variant">Rp 10.000/kg</span>
+</label>
+<label class="flex items-center p-3 bg-surface-container-lowest rounded-md cursor-pointer border border-transparent outline-variant/15 hover:bg-surface-container transition-colors">
+<input class="text-primary-container focus:ring-primary-container border-outline w-4 h-4" name="package" type="radio"/>
+<span class="ml-3 text-body-md text-on-surface flex-1">Express (6 Jam)</span>
+<span class="text-body-md text-on-surface-variant">Rp 15.000/kg</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Notes Section -->
+<section class="bg-surface-container-low rounded-xl p-5">
+<h2 class="font-headline text-title-sm text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">edit_note</span> Catatan
+                </h2>
+<textarea class="w-full bg-surface-container-highest border-none rounded-md text-body-md text-on-surface px-4 py-3 focus:ring-0 focus:bg-surface-container-lowest focus:outline focus:outline-[0.5px] focus:outline-primary/40 transition-colors" id="notes" placeholder="Tambahkan catatan khusus..." rows="2"></textarea>
+</section>
+</form>
+</main>
+<!-- Floating Total & Action Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-12px_40px_rgba(26,27,34,0.06)] rounded-t-2xl px-6 py-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-widest font-bold">Total Harga</span>
+<span class="font-headline text-headline-md text-on-surface font-bold">Rp 0</span>
+</div>
+<button class="bg-[linear-gradient(135deg,theme(colors.primary)_0%,theme(colors.primary-container)_100%)] text-on-primary px-6 py-3 rounded-full font-medium text-body-md flex items-center gap-2 shadow-sm active:scale-95 transition-transform" type="button">
+            Simpan <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+</body></html>

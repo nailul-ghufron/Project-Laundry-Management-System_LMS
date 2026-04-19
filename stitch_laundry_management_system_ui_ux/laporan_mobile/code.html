@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laporan Pendapatan - PristineFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#1a1b22",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-highest": "#e3e1eb",
+                        "primary-container": "#1e40af",
+                        "surface-bright": "#fbf8ff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "primary": "#00288e",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary": "#4c2e00",
+                        "outline": "#757684",
+                        "inverse-on-surface": "#f1f0fa",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6b4200",
+                        "surface-container-low": "#f4f2fc",
+                        "on-surface-variant": "#444653",
+                        "inverse-surface": "#2f3037",
+                        "surface-variant": "#e3e1eb",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1b22",
+                        "surface-dim": "#dad9e3",
+                        "on-error-container": "#93000a",
+                        "background": "#fbf8ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "outline-variant": "#c4c5d5",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed": "#001453",
+                        "on-primary-container": "#a8b8ff",
+                        "secondary": "#006c49",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-container": "#eeedf7",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dde1ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#3755c3",
+                        "surface": "#fbf8ff",
+                        "on-tertiary-container": "#ffa929",
+                        "inverse-primary": "#b8c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf8ff]/80 backdrop-blur-xl shadow-sm md:hidden">
+<div class="flex justify-between items-center px-6 h-16 relative">
+<!-- Background Layer for Separation -->
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-[#f4f2fc]"></div>
+<button class="text-[#1e40af] hover:bg-[#f4f2fc] p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+<h1 class="font-['Inter'] font-semibold tracking-tight text-xl font-bold tracking-tighter text-[#1e40af]">PristineFlow</h1>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden hover:bg-[#f4f2fc] transition-colors active:scale-95 duration-200 cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional headshot of a man with short hair wearing a navy blue shirt against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgTKMuN8zZz-ZzR8xZCFtMIgsgXenS93VHHwSq_wKoJ-5YyPQWzYUI9fn2wUCs4JCz4qSbZqTk4ULYkjFRdjeAWmmk_FIjfM-oY1jDsg4YkFHsHm2e3IUAKIwFskSuUbrKJ6a4CfUlGMFruk4xql-n6Msf3qLMJkv2AExLRWS1YD7hkuxO4xFGZgzhtR0kEltYyNIqTpXc1nbjntiKH_VO-K5Faeo4vt-m7W80vvNkB_1k-7VtCTiAo3E8TWV8XcTnCZOJmqsPVY4t"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation (Hidden on Mobile) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-72 rounded-r-3xl shadow-2xl bg-[#f4f2fc] z-[60] flex-col py-8">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden shadow-sm">
+<img alt="Manager Avatar" class="w-full h-full object-cover" data-alt="professional headshot of a man with short hair wearing a navy blue shirt against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSuzyqtcWm6Q-LlKUBDHrlLHsZCa_iHNKNPoI_Z_NVcb7GgwGzoWJwv04p9ztte4n3lu1tB5AaVyeGwTcU9LrS9JMP4HC64cIUAVyhRq1sS1p1mvvXqMEJ0O5UVrzUU9PYAafaFmz4o17ty2LCRWjb-u2Blg6_VD221uGDH678rxLCMb2FkcqPbIF8qlJpEHSjXqLZ9BgsJ0Kn-1zgQJ0Ilb8-8iOyTlSdY-n-v5564dWawtLq0kbXVe7pZtfD_iCFy3LPaGNIX_GT"/>
+</div>
+<div>
+<h2 class="font-['Inter'] font-medium text-sm text-[#1e40af] font-black">Admin Portal</h2>
+<p class="text-xs text-on-surface-variant">Pristine Flow LMS</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#444653] mx-4 my-1 px-6 py-3 hover:bg-[#e3e1eb] rounded-full transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#444653] mx-4 my-1 px-6 py-3 hover:bg-[#e3e1eb] rounded-full transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="add_to_photos">add_to_photos</span>
+<span class="font-['Inter'] font-medium text-sm">New Transaction</span>
+</a>
+<a class="flex items-center gap-4 text-[#444653] mx-4 my-1 px-6 py-3 hover:bg-[#e3e1eb] rounded-full transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dry_cleaning">dry_cleaning</span>
+<span class="font-['Inter'] font-medium text-sm">Laundry Status</span>
+</a>
+<a class="flex items-center gap-4 bg-[#1e40af] text-white rounded-full mx-4 my-1 px-6 py-3 transition-transform duration-300 shadow-md" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] font-medium text-sm">Revenue Reports</span>
+</a>
+<a class="flex items-center gap-4 text-[#444653] mx-4 my-1 px-6 py-3 hover:bg-[#e3e1eb] rounded-full transition-transform duration-300 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] font-medium text-sm">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-4 md:pl-80 md:pr-8 md:pt-12 md:pb-12 space-y-6">
+<!-- Header Section -->
+<div class="flex flex-col gap-2">
+<h2 class="text-headline-md font-semibold text-on-surface tracking-tight">Laporan Pendapatan</h2>
+<p class="text-body-md text-on-surface-variant">Ringkasan keuangan untuk bulan ini.</p>
+</div>
+<!-- Date Filter (Asymmetric Chip) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary rounded-lg text-on-primary text-sm font-medium whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                Bulan Ini
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-lg text-on-surface-variant text-sm font-medium hover:bg-surface-variant transition-colors whitespace-nowrap">
+                Bulan Lalu
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-lg text-on-surface-variant text-sm font-medium hover:bg-surface-variant transition-colors whitespace-nowrap">
+                Tahun Ini
+            </button>
+</div>
+<!-- Hero Stats Bento (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Large Card: Total Revenue -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden flex flex-col justify-between" style="background: linear-gradient(135deg, #00288e 0%, #1e40af 100%);">
+<!-- Decorative ambient glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-6 z-10 relative">
+<div class="bg-white/20 p-2 rounded-lg backdrop-blur-md">
+<span class="material-symbols-outlined text-white" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="bg-secondary-fixed/20 text-secondary-fixed px-2 py-1 rounded text-label-sm font-bold flex items-center gap-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[10px]" data-icon="trending_up">trending_up</span>
+                        +12.5%
+                    </span>
+</div>
+<div class="z-10 relative">
+<p class="text-primary-fixed-dim text-sm font-medium mb-1">Total Pendapatan</p>
+<h3 class="text-display-lg font-bold text-white tracking-tight leading-none">Rp 24.5M</h3>
+</div>
+</div>
+<!-- Smaller Stats Area -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/15 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-medium text-on-surface-variant">Pesanan Selesai</span>
+</div>
+<p class="text-headline-md font-bold text-on-surface">342</p>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/15 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+<span class="text-sm font-medium text-on-surface-variant">Rata-rata/Nota</span>
+</div>
+<p class="text-headline-md font-bold text-on-surface">Rp 71k</p>
+</div>
+</div>
+</div>
+<!-- Simplified Chart Area -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/15">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-title-sm font-semibold text-on-surface">Tren Mingguan</h3>
+<button class="text-primary p-1 rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- CSS-only simple bar chart representation -->
+<div class="h-32 flex items-end justify-between gap-2 px-2 mt-4 relative">
+<!-- Grid Lines -->
+<div class="absolute w-full h-[1px] bg-outline-variant/20 bottom-0"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/20 bottom-1/2"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/20 top-0"></div>
+<!-- Bars -->
+<div class="w-full bg-primary-container rounded-t-sm h-[40%] relative group z-10 hover:bg-primary transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Sen: Rp 3M</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[60%] relative group z-10 hover:bg-primary transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Sel: Rp 4.5M</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[45%] relative group z-10 hover:bg-primary transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Rab: Rp 3.2M</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[80%] relative group z-10 hover:bg-primary transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Kam: Rp 6M</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[50%] relative group z-10 hover:bg-primary transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Jum: Rp 3.8M</div>
+</div>
+<div class="w-full bg-secondary rounded-t-sm h-[95%] relative group z-10 hover:bg-secondary-fixed-variant transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Sab: Rp 7M</div>
+</div>
+<div class="w-full bg-secondary rounded-t-sm h-[85%] relative group z-10 hover:bg-secondary-fixed-variant transition-colors cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Min: Rp 6.2M</div>
+</div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant mt-2 px-2 font-medium">
+<span>S</span><span>S</span><span>R</span><span>K</span><span>J</span><span>S</span><span>M</span>
+</div>
+</div>
+<!-- Recent Transactions Card List (Mobile Friendly) -->
+<div class="space-y-4 pb-4">
+<div class="flex justify-between items-center">
+<h3 class="text-title-sm font-semibold text-on-surface">Transaksi Terakhir</h3>
+<a class="text-sm font-medium text-primary hover:underline" href="#">Lihat Semua</a>
+</div>
+<!-- List Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="local_laundry_service">local_laundry_service</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">TRX-8921</p>
+<p class="text-xs text-on-surface-variant">Hari ini, 14:30 • Cuci Komplit</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface tabular-nums">Rp 85.000</p>
+<span class="inline-block bg-secondary-fixed/20 text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded mt-1 uppercase tracking-wider">Selesai</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="dry_cleaning">dry_cleaning</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">TRX-8920</p>
+<p class="text-xs text-on-surface-variant">Hari ini, 11:15 • Dry Clean</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface tabular-nums">Rp 120.000</p>
+<span class="inline-block bg-tertiary-fixed/20 text-tertiary text-[10px] font-bold px-2 py-0.5 rounded mt-1 uppercase tracking-wider">Proses</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="iron">iron</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">TRX-8919</p>
+<p class="text-xs text-on-surface-variant">Kemarin, 16:45 • Setrika Saja</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface tabular-nums">Rp 45.000</p>
+<span class="inline-block bg-secondary-fixed/20 text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded mt-1 uppercase tracking-wider">Selesai</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white/90 backdrop-blur-xl shadow-[0_-12px_40px_rgba(26,27,34,0.06)] md:hidden">
+<div class="flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-[#444653] px-4 py-1 hover:text-[#1e40af] transition-all duration-300 ease-out group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#444653] px-4 py-1 hover:text-[#1e40af] transition-all duration-300 ease-out group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#444653] px-4 py-1 hover:text-[#1e40af] transition-all duration-300 ease-out group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="local_laundry_service">local_laundry_service</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Monitor</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#1e40af] text-white rounded-xl px-4 py-1 transition-all duration-300 ease-out shadow-md" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest">Reports</span>
+</a>
+</div>
+</nav>
+</body></html>

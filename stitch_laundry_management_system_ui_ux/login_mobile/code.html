@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PristineFlow - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#1a1b22",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-highest": "#e3e1eb",
+                        "primary-container": "#1e40af",
+                        "surface-bright": "#fbf8ff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "primary": "#00288e",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary": "#4c2e00",
+                        "outline": "#757684",
+                        "inverse-on-surface": "#f1f0fa",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6b4200",
+                        "surface-container-low": "#f4f2fc",
+                        "on-surface-variant": "#444653",
+                        "inverse-surface": "#2f3037",
+                        "surface-variant": "#e3e1eb",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1b22",
+                        "surface-dim": "#dad9e3",
+                        "on-error-container": "#93000a",
+                        "background": "#fbf8ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "outline-variant": "#c4c5d5",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed": "#001453",
+                        "on-primary-container": "#a8b8ff",
+                        "secondary": "#006c49",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-container": "#eeedf7",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dde1ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#3755c3",
+                        "surface": "#fbf8ff",
+                        "on-tertiary-container": "#ffa929",
+                        "inverse-primary": "#b8c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-screen flex flex-col items-center justify-center p-4">
+<!-- TopAppBar suppressed due to transactional intent -->
+<!-- BottomNavBar suppressed due to transactional intent -->
+<main class="w-full max-w-md w-full relative z-10 flex flex-col items-center justify-center p-6 space-y-8 bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(26,27,34,0.06)] relative overflow-hidden">
+<div class="absolute -top-32 -left-32 w-64 h-64 bg-primary-fixed-dim rounded-full blur-3xl opacity-30 z-0"></div>
+<div class="absolute -bottom-32 -right-32 w-64 h-64 bg-secondary-fixed-dim rounded-full blur-3xl opacity-20 z-0"></div>
+<div class="w-full z-10 flex flex-col items-center space-y-2">
+<h1 class="text-display-lg font-headline font-bold text-primary tracking-tighter">PristineFlow</h1>
+<p class="text-body-md text-on-surface-variant text-center">Laundry Management System</p>
+</div>
+<form class="w-full z-10 flex flex-col space-y-5">
+<div class="flex flex-col space-y-1">
+<label class="text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-widest" for="email">Email Pengguna</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline-variant">mail</span>
+<input class="w-full bg-surface-container-highest border-none rounded-md py-3 pl-10 pr-4 text-body-md text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:outline-none focus:border-outline-variant focus:border focus:border-opacity-40 transition-colors" id="email" placeholder="nama@laundry.id" type="email"/>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<label class="text-label-sm font-label font-bold text-on-surface-variant uppercase tracking-widest flex justify-between" for="password">
+                    Kata Sandi
+                    <a class="text-primary hover:text-primary-container transition-colors font-medium normal-case tracking-normal text-xs" href="#">Lupa?</a>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline-variant">lock</span>
+<input class="w-full bg-surface-container-highest border-none rounded-md py-3 pl-10 pr-10 text-body-md text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:outline-none focus:border-outline-variant focus:border focus:border-opacity-40 transition-colors" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 text-outline-variant hover:text-on-surface transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-bold text-sm py-4 rounded-xl flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity active:scale-[0.98]" type="submit">
+<span>Masuk Sistem</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</form>
+<div class="w-full z-10 text-center mt-6">
+<p class="text-xs text-on-surface-variant">Dengan masuk, Anda menyetujui <a class="text-primary font-medium hover:underline" href="#">Syarat &amp; Ketentuan</a> kami.</p>
+</div>
+</main>
+</body></html>
