@@ -1,4 +1,4 @@
-# 🧺 Pristine LMS — Laundry Management System
+# 🧺 LMS — Laundry Management System
 
 Sistem Manajemen Laundry berbasis web yang dibangun dengan **PHP (MVC)**, **MySQL**, dan **Tailwind CSS**. Dirancang untuk memudahkan operasional bisnis laundry, mulai dari pencatatan transaksi, manajemen pelanggan, pemantauan status cucian, hingga laporan pendapatan.
 
